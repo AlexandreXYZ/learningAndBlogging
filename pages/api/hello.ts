@@ -1,13 +1,11 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
-
-type Data = {
-  name: string
-}
-
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
-}
+export const handler = async (): Promise<string[]> => {
+	try {
+		const response = await fetch('http://localhost:3001/home');
+		const data = await response.json();
+		return data;
+	}
+	catch(err) {
+		console.error(`Error: ${err}`);
+		throw(err);
+	}
+};

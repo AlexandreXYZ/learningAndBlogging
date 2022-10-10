@@ -1,3 +1,22 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "eqeqeq": ["warn", "smart"],
+    "curly": "error",
+    "quotes": ["error", "single"],
+    "indent": ["error", "tab"],
+    "semi": ["error", "always"],
+    "space-in-parens": ["error", "never"],
+    "brace-style": ["error", "stroustrup"],
+    "arrow-spacing": ["error", { "before": true, "after": true }]
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ]
 }
